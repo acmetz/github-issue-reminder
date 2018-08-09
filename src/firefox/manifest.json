@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+  "name": "Gitub Issue Reminder",
+  "version": "0.1",
+
+  "description": "A browser extension that allows you to track and be notified of new github issues based on search criteria",
+  "permissions": ["activeTab", "identity", "*://github.com/*","notifications","alarms"],
+
+  "content_scripts":[
+      {
+          "matches": ["*://github.com/*/issues*"],
+          "js": ["trackbutton.js"]
+      }
+  ]
+
+}
