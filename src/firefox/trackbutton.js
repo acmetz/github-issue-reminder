@@ -24,8 +24,20 @@ function createButton()
 }
 
 function setTracked(link){
+    var notTracking = link.innerText === untrackedText;
+    var uri = link.baseURI;
+    var obj = { name: uri, willTrack: notTracking};
+    var searches = decodeURIComponent(window.location.search).replace("?q=","");
+    var search = searches.split("+")
+    var vals = [];
+    for(var i=0;i < search.length;i++){
+        var cur = search[i].split(":");
+        vals.push({key: cur[0], value: cur[1]});
+    }
+    obj.vals = vals;
+    console.log(obj);
     link.classList.toggle("selected");
-    link.innerText = link.innerText === untrackedText ? trackedText : untrackedText;          
+    link.innerText = notTracking ? trackedText : untrackedText;          
 }
 
 function containsButton(){
