@@ -4,8 +4,8 @@
   "version": "0.1",
 
   "description": "A browser extension that allows you to track and be notified of new github issues based on search criteria",
-  "permissions": ["activeTab", "identity"
-        , "*://github.com/*","notifications","alarms"
+  "permissions": ["activeTab", "identity", "storage",
+        "*://github.com/*","notifications","alarms"
         ],
 
   "content_scripts":[
